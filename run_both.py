@@ -4,8 +4,20 @@ import tensorflow as tf
 from tensorflow.keras.models import load_model
 import streamlit as st
 
+# Replace "your-bucket-name" with the name of your GCP Storage bucket
+bucket_name = "ml-fp-nodel"
+
+# Replace "your-model.h5" with the name of your .h5 model file
+model_file = "20230517_Mid.h5"
+
+# Construct the full model path
+model_path = f"gs://{bucket_name}/{model_file}"
+
+# Load the model using the appropriate library function
+model = tf.keras.models.load_model(model_path)
+
 # Load the trained model
-model = load_model('20230517_Mid.h5')
+# model = load_model('20230517_Mid.h5')
 
 # Define a function to preprocess the input image
 def preprocess_image(image):
