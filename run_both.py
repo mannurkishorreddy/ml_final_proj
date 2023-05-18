@@ -5,7 +5,7 @@ from tensorflow.keras.models import load_model
 import streamlit as st
 
 # Replace "your-bucket-name" with the name of your GCP Storage bucket
-bucket_name = "ml-fp-model"
+bucket_name = "ml-model-host"
 
 # Replace "your-model.h5" with the name of your .h5 model file
 model_file = "20230517_Mid.h5"
