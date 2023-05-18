@@ -34,7 +34,7 @@ def predict_bmi_from_image(image):
 
 # Create a function to capture live video from the camera and predict BMI
 def predict_bmi_live():
-    cap = cv2.VideoCapture(0)  # Open the camera
+    cap = cv2.VideoCapture(1)  # Open the camera
     
     # Load the pre-trained face detection model
     face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
