@@ -21,10 +21,14 @@ model = tf.keras.models.load_model(model_path)
 
 # Define a function to preprocess the input image
 def preprocess_image(image):
-    image = cv2.resize(image, (224, 224))
+    # Check image shape
+    if image.shape[:2] != (224, 224):
+        image = cv2.resize(image, (224, 224))
+    
     image = image / 255.0  # Normalize the image
     image = np.expand_dims(image, axis=0)  # Add batch dimension
     return image
+
 
 # Create a function to predict BMI from an uploaded image
 def predict_bmi_from_image(image):
